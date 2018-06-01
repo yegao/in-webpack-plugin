@@ -80,7 +80,9 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       template: 'index.html',
       inject: true
     }),
-    new inWebpackPlugin(),
+    new inWebpackPlugin({
+      ext:'html'
+    }),
     // copy custom static assets
     // from    定义要拷贝的源目录
     // to      定义要拷贝到的目标目录

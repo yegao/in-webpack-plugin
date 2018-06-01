@@ -4,7 +4,11 @@
 const utils = require('./utils.js');
 
 class InPlugin{
+  constructor(options){
+    this.options = options;
+  }
   apply(compiler){
+    let that = this;
     if(compiler.hooks){
       compiler.hooks.make.tapAsync('in-webpack-plugin',function(compilation,callback){
         callback();
@@ -16,13 +20,18 @@ class InPlugin{
         );
       });
       compiler.hooks.emit.tapAsync('in-webpack-plugin',function(compilation,callback){
-          // console.log(compilation);
-          let source = compilation.assets['index.html'].source();
-          compilation.assets['index.html'].source = function(){
-            return`${utils.replace(source)}
-            <style>${utils.combine(utils.source.styles)}</style>
-            <script type="text/javascript">${utils.combine(utils.source.scripts)}</script>`;
-          };
+          let ext = that.options.ext;
+          let assets = compilation.assets;
+          for(let key in assets){
+            let reg = new RegExp("\\."+ext+"(\\?|$)");
+            if(reg.test(key)){
+              let source = compilation.assets[key].source();
+              compilation.assets[key].source = function(){
+                  return utils.replace(source).replace('</html>',`<style>${utils.combine(utils.source.styles)}</style>
+                  <script type="text/javascript">${utils.combine(utils.source.scripts)}</script></html>`);
+              };
+            }
+          }
           callback();
       })
     }
