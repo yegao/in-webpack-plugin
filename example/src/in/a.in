@@ -1,0 +1,14 @@
+<ul id="a">
+  <li onclick="click1(this)">clike here!</li>
+</ul>
+<in>./src/in/b.in</in>
+<script>
+function click1(e){
+  e.innerHTML = 'clicked!';
+}
+</script>
+<style>
+#a{
+  color:#0000ff;
+}
+</style>

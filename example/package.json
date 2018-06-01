@@ -1,0 +1,59 @@
+{
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx webpack-dev-server --config build/webpack.dev.conf.js --inline --progress",
+    "start": "npm run dev"
+  },
+  "keywords": [
+    "in",
+    "prop"
+  ],
+  "author": "ygg",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "*",
+    "babel-core": "*",
+    "babel-loader": "*",
+    "babel-plugin-syntax-jsx": "*",
+    "babel-plugin-transform-runtime": "*",
+    "babel-preset-env": "*",
+    "babel-preset-stage-2": "*",
+    "chalk": "*",
+    "copy-webpack-plugin": "*",
+    "css-loader": "*",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "*",
+    "friendly-errors-webpack-plugin": "*",
+    "html-webpack-plugin": "*",
+    "less": "*",
+    "less-loader": "*",
+    "mustache": "*",
+    "node-notifier": "*",
+    "optimize-css-assets-webpack-plugin": "*",
+    "ora": "*",
+    "portfinder": "*",
+    "postcss-import": "*",
+    "postcss-loader": "*",
+    "postcss-url": "*",
+    "rimraf": "*",
+    "semver": "*",
+    "shelljs": "*",
+    "url-loader": "*",
+    "webpack": "*",
+    "webpack-bundle-analyzer": "*",
+    "webpack-cli": "*",
+    "webpack-dev-server": "*",
+    "webpack-merge": "*"
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}

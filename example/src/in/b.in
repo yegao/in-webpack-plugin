@@ -1,0 +1,6 @@
+<div id="b">六一快乐</div>
+<style>
+#b{
+  color:#00ff00;
+}
+</style>
